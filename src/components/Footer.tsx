@@ -2,17 +2,31 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+  const handleLinkClick = (path: string) => {
+    console.log('Footer link clicked:', path);
+  };
+
   return (
     <footer className="bg-slate-800 text-white pt-10">
       {/* Top Links Row */}
       <section className="w-full py-4">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center items-center space-x-8">
-            <Link to="/about" className="inline-block"><h5 className="text-white font-semibold text-lg">About Us</h5></Link>
-            <Link to="/privacy-policy" className="inline-block"><h5 className="text-white font-semibold text-lg">Privacy Policy</h5></Link>
-            <Link to="/terms-and-conditions" className="inline-block"><h5 className="text-white font-semibold text-lg">Terms & Conditions</h5></Link>
-            <Link to="/refund-policy" className="inline-block"><h5 className="text-white font-semibold text-lg">Refund Policy</h5></Link>
-            <Link to="/contact" className="inline-block"><h5 className="text-white font-semibold text-lg">Contact Us</h5></Link>
+            <Link to="/about" className="inline-block" onClick={() => handleLinkClick('/about')}>
+              <h5 className="text-white font-semibold text-lg">About Us</h5>
+            </Link>
+            <Link to="/privacy-policy" className="inline-block" onClick={() => handleLinkClick('/privacy-policy')}>
+              <h5 className="text-white font-semibold text-lg">Privacy Policy</h5>
+            </Link>
+            <Link to="/terms-and-conditions" className="inline-block" onClick={() => handleLinkClick('/terms-and-conditions')}>
+              <h5 className="text-white font-semibold text-lg">Terms & Conditions</h5>
+            </Link>
+            <Link to="/refund-policy" className="inline-block" onClick={() => handleLinkClick('/refund-policy')}>
+              <h5 className="text-white font-semibold text-lg">Refund Policy</h5>
+            </Link>
+            <Link to="/contact" className="inline-block" onClick={() => handleLinkClick('/contact')}>
+              <h5 className="text-white font-semibold text-lg">Contact Us</h5>
+            </Link>
           </div>
         </div>
       </section>
